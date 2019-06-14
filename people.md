@@ -10,10 +10,5 @@ permalink: /members/
 
 #### Gaurav Kumar
 ![Gaurav](images/gaurav.png)
-> I'm a Senior in Electrical Engineering at the Indian Institute of Technology, Mandi (Himachal Pradesh). Out of my few interests some are Robotics, IoT, Artificial Intelligence and Adventure Sports. I was the Coordinator of Robotronics Club for the year 2018-2019 which comes under the Science and Technology Council, Indian Institute of Technology, Mandi. Currently, I serve as the coordinator of the Hiking and Trekking club, Indian Institute of Technology, Mandi. I had recently completed an internship focussed on edge computing and IoT at the Siemens Technology and Services Pvt. Ltd., Bangalore, India. I'm fluent in english, hindi and can write Deutsch.
-
-Please have a look at my Github and Linkdin Profiles:
-
-> [Github](https://github.com/Gaurav047)
-> [Linkdin](https://www.linkedin.com/in/gaurav-kumar-0b0887121/)
-
+[Github](https://github.com/Gaurav047)
+[Linkdin](https://www.linkedin.com/in/gaurav-kumar-0b0887121/)
