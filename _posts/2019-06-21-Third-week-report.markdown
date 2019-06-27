@@ -177,6 +177,27 @@ Test that your instance is serving traffic on its external IP:
 2. Copy the external IP for your instance under the 'EXTERNAL_IP' column.
 3. In a browser, navigate to 'http://[EXTERNAL_IP]'.
 
+You should now see the "Hello World!" page.
+
+#### Create a subscription to the registry's Pub/Sub topic, substituting your project ID:
+
+```
+$ gcloud pubsub subscriptions create \
+    projects/PROJECT_ID/subscriptions/my-subscription \
+    --topic=projects/PROJECT_ID/topics/my-device-events
+
+```
+
+Run the following command to read the messages published to the telemetry topic, substituting your project ID:
+
+```
+$ gcloud pubsub subscriptions pull --auto-ack \
+    projects/PROJECT_ID/subscriptions/my-subscription
+```
+
+Repeat the subscriptions pull command to view additional messages.
+
+
 
 
  
