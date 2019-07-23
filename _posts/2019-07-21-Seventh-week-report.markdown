@@ -145,6 +145,59 @@ $ curl -X POST \
 {}
 
 ```
+Lua Script to POST data to Google Cloud IoT Core Pub/Sub topic using the LuaSocket Library through the Lua Interpreter.
+
+```
+  local http = require"socket.http"
+  local ltn12 = require"ltn12"
+
+  local reqbody = "aGVsbG8K"
+  local respbody = {} -- for the response body
+
+  local result, respcode, respheaders, respstatus = http.request {
+      method = "POST",
+      url = "https://cloudiotdevice.googleapis.com/v1/projects/luabigquery/locations/us-central1/registries/registry1/devices/esp32:publishEvent",
+      source = ltn12.source.string(reqbody),
+      headers = {
+          ["content-type"] = "aplication/json",
+          ["authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpYXQiOjE1NjM3MzQxMTEsImV4cCI6MTU2MzczNzcxMSwiYXVkIjoibHVhYmlncXVlcnkifQ.0uhqGMVlByD3XI-EOuJdHqsnN3GQALO_CUXyNSFvst7OXFfHViBf4U7vHZ9CfsLK9FiU_ddt6uN9cQ8UXE6daw",
+          ["cache-control"] = "no-cache"  
+      },
+      sink = ltn12.sink.table(respbody)
+  }
+  -- get body as string by concatenating table filled by sink
+  respbody = table.concat(respbody)
+```
+
+#### MQTT Bridge
+
+We will using Mosquitto to test the MQTT bridge on our computer before writing some microcontroller code.
+This time, the JWT has to be passed in the password field; the username won’t be checked as all the information is in the JWT, so we can set the username to any value (such as "unused" for instance).
+
+IoT core does all the encrypted communication through TLS1.2 or higher to ensure that all of your devices are secure when they’re talking to the cloud.
+Make sure to specify the CA file, by downloading roots certificates and providing those to your MQTT client:
+
+```
+# First, download root certificates
+$ curl https://pki.goog/roots.pem > roots.pem
+
+# Use Mosquitto to publish a message to the MQTT bridge
+mosquitto_pub \
+--host mqtt.googleapis.com \
+--port 8883 \
+--id projects/luabigquery/locations/us-central1/registries/registry1/devices/esp32 \
+--username unused \
+--pw "<your-jwt-token>" \
+--cafile ./roots.pem \
+--tls-version tlsv1.2 \
+--protocol-version mqttv311 \
+--debug \
+--qos 1 \
+--topic /devices/<device-name>/events \
+--message "Hello MQTT"
+
+```
+
 
 
 
