@@ -197,7 +197,26 @@ mosquitto_pub \
 --message "Hello MQTT"
 
 ```
+Again, you can pull the MQTT subscription to verify that it works:
 
+```
+$ gcloud pubsub subscriptions pull --auto-ack $PUBSUB_SUBSCRIPTION --limit=1
+```
+This will produce the following output:
+
+```
+┌────────────┬─────────────────┬─────────────────────────────────────┐
+│    DATA    │    MESSAGE_ID   │              ATTRIBUTES             │
+├────────────┼─────────────────┼─────────────────────────────────────┤
+│ Hello MQTT │ 410700146251251 │ deviceId=esp32                      │
+│            │                 │ deviceNumId=3069493838977348        │
+│            │                 │ deviceRegistryId=registry1   │
+│            │                 │ deviceRegistryLocation=us-central11 │
+│            │                 │ projectId=luabigquery         │
+│            │                 │ subFolder=                          │
+└────────────┴─────────────────┴─────────────────────────────────────┘
+
+```
 
 
 
