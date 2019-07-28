@@ -1,0 +1,10 @@
+### publish a message
+
+mosquitto_pub --host mqtt.googleapis.com --port 8883 --id projects/luabigquery/locations/us-central1/registries/Nodes12/devices/esp32one --username unused --pw "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJpYXQiOjE1NjQzMjQyODIsImV4cCI6MTU2NDMyNzg4MiwiYXVkIjoibHVhYmlncXVlcnkifQ.SSKRU6T8maVkvoWjYm-nx280EydixHEbwlqOCoPNJFambmf82nX4fr2alT3znxCo5iZ3A6cjM-txGO4FkW_TyA" --cafile ./roots.pem --tls-version tlsv1.2 --protocol-version mqttv311 --debug --qos 1 --topic /devices/esp32one/events --message "Hello lablua2"
+
+
+### pull a message
+
+ gcloud pubsub subscriptions pull --auto-ack $PUBSUB_SUBSCRIPTION --limit=1
+
+

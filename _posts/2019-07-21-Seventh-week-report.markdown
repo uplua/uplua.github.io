@@ -202,7 +202,7 @@ Again, you can pull the MQTT subscription to verify that it works:
 ```
 $ gcloud pubsub subscriptions pull --auto-ack $PUBSUB_SUBSCRIPTION --limit=1
 ```
-This will produce the following output:
+This will generate the following output log:
 
 ```
 ┌────────────┬─────────────────┬─────────────────────────────────────┐
@@ -210,13 +210,16 @@ This will produce the following output:
 ├────────────┼─────────────────┼─────────────────────────────────────┤
 │ Hello MQTT │ 410700146251251 │ deviceId=esp32                      │
 │            │                 │ deviceNumId=3069493838977348        │
-│            │                 │ deviceRegistryId=registry1   │
+│            │                 │ deviceRegistryId=registry1          │
 │            │                 │ deviceRegistryLocation=us-central11 │
-│            │                 │ projectId=luabigquery         │
+│            │                 │ projectId=luabigquery               │
 │            │                 │ subFolder=                          │
 └────────────┴─────────────────┴─────────────────────────────────────┘
 
 ```
+#### Connecting the microcontroller ( esp32/esp8266 ) to Cloud IoT Core
 
+We will be using the MQTT bridge, which means that our microcontroller code will need an MQTT client, and a way to generate a JWT from a given private key.
+We could write some code for that, but hopefully some very lightweight libraries and SDKs already exist to speed up and simplify the integration between a device and Cloud IoT Core.
 
 
