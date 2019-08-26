@@ -16,7 +16,7 @@
 title: Lua-AIoT
 email: gauravkumarbtp@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Lua-AIoT project aims at development of Lua programming language as a pioneer in the applications of IoT and Artificial Intelligence.
+  Lua-AIoT project aims to boost the use of Lua programming language as a pioneer in the areas of IoT - Internet of Things and AI - Artificial Intelligence.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Lua-AIoT
