@@ -82,6 +82,7 @@ With slight changes, the Lua program will send data from a predefined in the [gi
 
 The code in Lua for this can be found [here](https://github.com/uplua/lua_to_google_iot_core_examples/blob/master/mqtt_example/mqtt.lua)
 
+The Complete source code can be found [here](https://github.com/uplua).
 
 #### Further Improvements
 
