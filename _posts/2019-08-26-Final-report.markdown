@@ -103,6 +103,7 @@ To do this, an IDE like ESPlorer will be used.
 Received values will be displayed in IDE console
 
 * With slight changes, a looping Lua program running in NodeMCU may change the frequency for sending data from a table, based on the value received from the external program interface.
+The code for the same can be found [here](https://github.com/uplua/lua_to_google_iot_core_examples/blob/master/init.lua).
 
 * [TO DO] There a very limited supporting libraries in nodemcu that can make this happen, so it is out of the scope of a gsoc project as of now, please have a look at similar library in [javascript](https://github.com/mqttjs/MQTT.js).
 
